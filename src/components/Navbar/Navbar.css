@@ -1,0 +1,508 @@
+
+/* =====================================
+   CAFEHUB CINEMATIC NAVBAR
+===================================== */
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  padding: 0 5%;
+  background: transparent;
+  border-bottom: 1px solid rgba(243, 235, 221, 0.13);
+  transition:
+    background 0.4s ease,
+    border-color 0.4s ease,
+    box-shadow 0.4s ease;
+}
+
+.navbar.scrolled,
+.navbar.menu-active {
+  background: rgba(16, 12, 9, 0.95);
+  backdrop-filter: blur(22px);
+  -webkit-backdrop-filter: blur(22px);
+  border-color: rgba(185, 154, 104, 0.2);
+}
+
+.navbar.scrolled {
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
+}
+
+.navbar-container {
+  width: 100%;
+  max-width: 1600px;
+  min-height: 92px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 28px;
+  transition: min-height 0.4s ease;
+}
+
+.navbar.scrolled .navbar-container {
+  min-height: 76px;
+}
+
+/* =====================================
+   BRAND
+===================================== */
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  flex-shrink: 0;
+}
+
+.brand-mark {
+  width: 46px;
+  height: 46px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid var(--gold);
+  color: var(--gold);
+  font-family: var(--font-heading);
+  font-size: 36px;
+  font-style: italic;
+  line-height: 1;
+  transition: all 0.4s ease;
+}
+
+.brand-mark span {
+  color: var(--ivory);
+  margin-left: -5px;
+}
+
+.navbar-brand:hover .brand-mark {
+  background: var(--gold);
+  color: var(--obsidian);
+  transform: rotate(-7deg);
+}
+
+.navbar-brand:hover .brand-mark span {
+  color: var(--obsidian);
+}
+
+.brand-information {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.brand-name {
+  font-family: var(--font-heading);
+  font-size: 30px;
+  font-weight: 600;
+  line-height: 1;
+  color: var(--ivory);
+  letter-spacing: 0.5px;
+}
+
+.brand-caption {
+  color: var(--gold);
+  font-family: var(--font-body);
+  font-size: 12px;
+  letter-spacing: 1.2px;
+}
+
+/* =====================================
+   DESKTOP NAVIGATION
+===================================== */
+
+.desktop-navigation {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(15px, 2vw, 30px);
+}
+
+.navigation-link {
+  position: relative;
+  min-height: 45px;
+  display: flex;
+  align-items: center;
+  color: rgba(243, 235, 221, 0.75);
+  font-size: 13px;
+  font-weight: 500;
+  white-space: nowrap;
+  transition: color 0.3s ease;
+}
+
+.navigation-link:hover,
+.navigation-link.navigation-active {
+  color: var(--ivory);
+}
+
+.navigation-indicator {
+  position: absolute;
+  bottom: 4px;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: var(--gold);
+}
+
+/* =====================================
+   NAVBAR ACTIONS
+===================================== */
+
+.navbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+/* LOGIN BUTTON */
+
+.navbar-login {
+  min-height: 46px;
+  padding: 0 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  border: 1px solid rgba(185, 154, 104, 0.55);
+  color: var(--ivory);
+  font-size: 13px;
+  font-weight: 600;
+  transition: all 0.35s ease;
+}
+
+.navbar-login svg {
+  color: var(--gold);
+  transition: transform 0.3s ease;
+}
+
+.navbar-login:hover {
+  background: rgba(185, 154, 104, 0.12);
+  border-color: var(--gold);
+  color: var(--gold);
+}
+
+.navbar-login:hover svg {
+  transform: translateY(-2px);
+}
+
+/* RESERVATION BUTTON */
+
+.navbar-booking {
+  min-height: 46px;
+  padding: 0 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 11px;
+  background: var(--gold);
+  color: var(--obsidian);
+  font-size: 13px;
+  font-weight: 700;
+  white-space: nowrap;
+  transition: all 0.35s ease;
+}
+
+.navbar-booking:hover {
+  background: var(--ivory);
+  transform: translateY(-2px);
+}
+
+.navbar-booking svg {
+  transition: transform 0.3s ease;
+}
+
+.navbar-booking:hover svg {
+  transform: translate(3px, -3px);
+}
+
+/* =====================================
+   MOBILE MENU TOGGLE
+===================================== */
+
+.mobile-toggle {
+  width: 45px;
+  height: 45px;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  color: var(--ivory);
+  border: 1px solid rgba(185, 154, 104, 0.4);
+  cursor: pointer;
+}
+
+.mobile-toggle span {
+  display: flex;
+}
+
+/* =====================================
+   MOBILE NAVIGATION
+===================================== */
+
+.mobile-navigation {
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+  padding: 115px 7% 30px;
+  overflow-y: auto;
+  background:
+    radial-gradient(
+      circle at 100% 0%,
+      rgba(185, 154, 104, 0.1),
+      transparent 36%
+    ),
+    var(--obsidian);
+}
+
+.mobile-navigation-inner {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.mobile-navigation-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--gold);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  margin-bottom: 28px;
+}
+
+/* MOBILE LINKS */
+
+.mobile-navigation-links {
+  display: flex;
+  flex-direction: column;
+}
+
+.mobile-navigation-link {
+  min-height: 73px;
+  display: flex;
+  align-items: center;
+  gap: 19px;
+  border-bottom: 1px solid rgba(243, 235, 221, 0.13);
+  color: var(--ivory);
+  transition: color 0.3s ease;
+}
+
+.mobile-link-number {
+  color: var(--gold);
+  font-size: 12px;
+}
+
+.mobile-link-name {
+  flex: 1;
+  font-family: var(--font-heading);
+  font-size: 36px;
+  font-weight: 500;
+}
+
+.mobile-navigation-link svg {
+  color: var(--gold);
+  transition: transform 0.3s ease;
+}
+
+.mobile-navigation-link:hover svg {
+  transform: translate(4px, -4px);
+}
+
+.mobile-navigation-link:hover,
+.mobile-navigation-link.mobile-active {
+  color: var(--gold);
+}
+
+/* MOBILE ACCOUNT ACTIONS */
+
+.mobile-account-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 30px;
+}
+
+.mobile-login-button,
+.mobile-reservation-button {
+  min-height: 55px;
+  padding: 0 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  font-size: 13px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.mobile-login-button {
+  border: 1px solid rgba(185, 154, 104, 0.5);
+  color: var(--ivory);
+}
+
+.mobile-login-button svg:first-child {
+  color: var(--gold);
+}
+
+.mobile-reservation-button {
+  background: var(--gold);
+  color: var(--obsidian);
+}
+
+.mobile-reservation-button:hover {
+  background: var(--ivory);
+}
+
+.mobile-login-button:hover {
+  background: rgba(185, 154, 104, 0.12);
+  border-color: var(--gold);
+  color: var(--gold);
+}
+
+/* MOBILE FOOTER */
+
+.mobile-navigation-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto;
+  padding-top: 35px;
+  gap: 20px;
+}
+
+.mobile-footer-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  color: var(--muted);
+  font-size: 12px;
+  letter-spacing: 1.5px;
+}
+
+.mobile-social-link {
+  width: 43px;
+  height: 43px;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(185, 154, 104, 0.4);
+  color: var(--gold);
+  font-size: 19px;
+  transition: all 0.3s ease;
+}
+
+.mobile-social-link:hover {
+  background: var(--gold);
+  color: var(--obsidian);
+}
+
+/* =====================================
+   TABLET RESPONSIVE
+===================================== */
+
+@media (max-width: 1200px) {
+  .navbar-container {
+    gap: 16px;
+  }
+
+  .desktop-navigation {
+    gap: 14px;
+  }
+
+  .brand-name {
+    font-size: 27px;
+  }
+
+  .navigation-link {
+    font-size: 12px;
+  }
+
+  .navbar-actions {
+    gap: 8px;
+  }
+
+  .navbar-login,
+  .navbar-booking {
+    padding: 0 11px;
+    font-size: 12px;
+  }
+}
+
+/* =====================================
+   MOBILE RESPONSIVE
+===================================== */
+
+@media (max-width: 950px) {
+  .navbar {
+    padding: 0 5%;
+  }
+
+  .navbar-container,
+  .navbar.scrolled .navbar-container {
+    min-height: 77px;
+  }
+
+  .desktop-navigation {
+    display: none;
+  }
+
+  .navbar-login,
+  .navbar-booking {
+    display: none;
+  }
+
+  .mobile-toggle {
+    display: flex;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar-container,
+  .navbar.scrolled .navbar-container {
+    min-height: 72px;
+  }
+
+  .brand-mark {
+    width: 40px;
+    height: 40px;
+    font-size: 32px;
+  }
+
+  .brand-name {
+    font-size: 26px;
+  }
+
+  .brand-caption {
+    font-size: 12px;
+    letter-spacing: 1px;
+  }
+
+  .mobile-navigation {
+    padding: 100px 6% 25px;
+  }
+
+  .mobile-link-name {
+    font-size: 32px;
+  }
+
+  .mobile-navigation-link {
+    min-height: 68px;
+  }
+}
+
+/* ACCESSIBILITY */
+
+@media (prefers-reduced-motion: reduce) {
+  .navbar,
+  .navbar-container,
+  .brand-mark,
+  .navigation-link,
+  .navbar-login,
+  .navbar-booking,
+  .mobile-navigation-link {
+    transition: none;
+  }
+}

@@ -1,0 +1,16 @@
+
+html {
+  scroll-behavior: auto;
+}
+
+body {
+  margin: 0;
+  background: #100C09;
+  color: #F3EBDD;
+  overflow-x: hidden;
+}
+
+main {
+  width: 100%;
+  overflow: clip;
+}

@@ -1,0 +1,377 @@
+
+.cafe-footer {
+  position: relative;
+  overflow: hidden;
+  background: #100C09;
+  color: #F3EBDD;
+  padding-top: 75px;
+}
+
+.cafe-footer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 8%;
+  width: 84%;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(185, 154, 104, 0.45),
+    transparent
+  );
+}
+
+.footer-main {
+  display: grid;
+  grid-template-columns: 1.5fr 0.8fr 1fr 1.2fr;
+  gap: 55px;
+  padding-bottom: 65px;
+}
+
+/* Brand */
+
+.footer-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  color: #F3EBDD;
+}
+
+.footer-brand-icon {
+  width: 45px;
+  height: 45px;
+  display: grid;
+  place-items: center;
+  border: 1px solid #B99A68;
+  color: #B99A68;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 32px;
+  font-weight: 600;
+}
+
+.footer-brand-name {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 32px;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.footer-brand-name span {
+  color: #B99A68;
+}
+
+.footer-brand-description {
+  max-width: 310px;
+  margin-top: 24px;
+  color: #BDB1A3;
+  font-size: 14px;
+  line-height: 1.9;
+}
+
+.footer-socials {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 28px;
+}
+
+.footer-socials a {
+  width: 39px;
+  height: 39px;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(185, 154, 104, 0.25);
+  border-radius: 50%;
+  color: #B99A68;
+  font-size: 16px;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+.footer-socials a:hover {
+  background: #B99A68;
+  color: #100C09;
+  border-color: #B99A68;
+  transform: translateY(-4px);
+}
+
+/* Footer Columns */
+
+.footer-column {
+  display: flex;
+  flex-direction: column;
+  gap: 17px;
+}
+
+.footer-column h3 {
+  color: #F3EBDD;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 23px;
+  font-weight: 600;
+  margin-bottom: 9px;
+}
+
+.footer-column > a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  width: fit-content;
+  color: #BDB1A3;
+  font-size: 13px;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+.footer-column > a svg {
+  opacity: 0;
+  transition: 0.3s ease;
+}
+
+.footer-column > a:hover {
+  color: #B99A68;
+}
+
+.footer-column > a:hover svg {
+  opacity: 1;
+  transform: translate(3px, -3px);
+}
+
+/* Contact */
+
+.footer-contact {
+  gap: 20px;
+}
+
+.footer-contact-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.footer-contact-item svg {
+  flex-shrink: 0;
+  color: #B99A68;
+  margin-top: 2px;
+}
+
+.footer-contact-item p,
+.footer-contact-item a {
+  color: #BDB1A3;
+  font-size: 13px;
+  line-height: 1.7;
+  text-decoration: none;
+}
+
+.footer-contact-item a:hover {
+  color: #B99A68;
+}
+
+/* Newsletter */
+
+.footer-newsletter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 35px;
+  padding-top: 40px;
+  padding-bottom: 45px;
+  border-top: 1px solid rgba(185, 154, 104, 0.2);
+}
+
+.newsletter-eyebrow {
+  color: #B99A68;
+  font-size: 12px;
+  letter-spacing: 2px;
+  font-weight: 600;
+}
+
+.newsletter-content h2 {
+  margin-top: 12px;
+  color: #F3EBDD;
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(30px, 4vw, 43px);
+  font-weight: 500;
+}
+
+.newsletter-content p {
+  margin-top: 9px;
+  color: #BDB1A3;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.newsletter-form {
+  display: flex;
+  align-items: center;
+  width: min(100%, 440px);
+  min-height: 52px;
+  border: 1px solid rgba(185, 154, 104, 0.4);
+  background: #241710;
+}
+
+.newsletter-form input {
+  flex: 1;
+  min-width: 0;
+  height: 50px;
+  padding: 0 16px;
+  outline: none;
+  border: none;
+  background: transparent;
+  color: #F3EBDD;
+  font-family: inherit;
+  font-size: 12px;
+}
+
+.newsletter-form input::placeholder {
+  color: #BDB1A3;
+}
+
+.newsletter-form button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  height: 50px;
+  padding: 0 18px;
+  border: none;
+  background: #B99A68;
+  color: #100C09;
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.newsletter-form button:hover {
+  background: #F3EBDD;
+}
+
+/* Bottom */
+
+.footer-bottom {
+  border-top: 1px solid rgba(185, 154, 104, 0.2);
+}
+
+.footer-bottom-inner {
+  min-height: 75px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.footer-bottom p,
+.footer-bottom-links a {
+  color: #8F8377;
+  font-size: 12px;
+  text-decoration: none;
+}
+
+.footer-bottom-links {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+.footer-bottom-links a:hover {
+  color: #B99A68;
+}
+
+.footer-made {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.footer-made svg {
+  color: #B99A68;
+}
+
+/* Responsive */
+
+@media (max-width: 1050px) {
+  .footer-main {
+    grid-template-columns: 1.2fr 1fr 1fr;
+    gap: 45px 35px;
+  }
+
+  .footer-brand-section {
+    grid-column: 1 / -1;
+  }
+
+  .footer-brand-description {
+    max-width: 450px;
+  }
+}
+
+@media (max-width: 700px) {
+  .cafe-footer {
+    padding-top: 55px;
+  }
+
+  .footer-main {
+    grid-template-columns: 1fr 1fr;
+    gap: 42px 25px;
+    padding-bottom: 45px;
+  }
+
+  .footer-brand-section {
+    grid-column: 1 / -1;
+  }
+
+  .footer-newsletter {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 25px;
+    padding-top: 32px;
+    padding-bottom: 35px;
+  }
+
+  .newsletter-form {
+    width: 100%;
+  }
+
+  .footer-bottom-inner {
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    padding-top: 22px;
+    padding-bottom: 22px;
+  }
+
+  .footer-bottom-links {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 18px;
+  }
+}
+
+@media (max-width: 420px) {
+  .footer-main {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-brand-section {
+    grid-column: auto;
+  }
+
+  .newsletter-form {
+    flex-direction: column;
+    align-items: stretch;
+    border: none;
+    gap: 10px;
+  }
+
+  .newsletter-form input {
+    width: 100%;
+    border: 1px solid rgba(185, 154, 104, 0.4);
+  }
+
+  .newsletter-form button {
+    width: 100%;
+  }
+}
