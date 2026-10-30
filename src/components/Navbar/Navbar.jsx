@@ -13,7 +13,7 @@ import {
 
 import { FaInstagram } from "react-icons/fa6";
 
-import "./avbar.css";
+import "./Navbar.css";
 
 const navLinks = [
   { name: "Home", path: "/" },
